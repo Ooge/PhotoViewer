@@ -20,7 +20,8 @@ class Ajax extends CI_Controller {
                 // Get the file extension through exploding the file name by . and
                 // getting the last element.
                 $fileExtension = end(explode('.',$_FILES['userfile']['name']));
-                $newFileName = generate_random(7) . '.' .  strtolower($fileExtension);
+                $imageGID = generate_random(7);
+                $newFileName = $imageGID . '.' .  strtolower($fileExtension);
 
                 // Here we setup our upload configuration
                 $config['upload_path'] = FCPATH . 'uploads';    // Where we want to upload
@@ -42,6 +43,7 @@ class Ajax extends CI_Controller {
                     // Create an array of data to be inserted into the MySQL table.
                     $insertData = array(
                         'user_id' => $user->id,
+                        'gid' => $imageGID,
                         'title' => $_POST['image-title'],
                         'description' => $_POST['image-desc'],
                         'file' => '/uploads/' . $newFileName,
