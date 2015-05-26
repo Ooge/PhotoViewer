@@ -33,7 +33,7 @@
                         if($user){
                             if($user->get_rank() == 'admin'){
                             ?>
-                            <a style="color:#D40000;" href="<?php echo base_url('/admin'); ?>"><li>Admin</li></a>
+                            <a href="<?php echo base_url('/admin'); ?>"><li style="color:#D40000;">Admin</li></a>
                             <?php } ?>
                             <a href="<?php echo base_url('/logout'); ?>"><li><?php echo $user->username; ?></li></a>
                             <?php
