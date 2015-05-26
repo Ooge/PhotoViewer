@@ -13,7 +13,14 @@ input[type="password"] {
     font-size: 16pt;
     font-family: Raleway, sans-serif;
     font-weight: bold;
-    border: 2px solid #53BBF4;
+    border: 3px solid #101010;
+    background-color: #151515;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="password"]:focus {
+    border: 3px solid #47A0D1;
 }
 
 .login-title {
