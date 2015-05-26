@@ -21,7 +21,7 @@ input[type="password"] {
 }
 
 hr{
-    margin-top: 15px;
+    margin-top: 20px;
     border: 0;
     height: 1px;
     background-image: linear-gradient(to right, rgba(80, 80, 80, 0), rgba(80, 80, 80, 0.75), rgba(80, 80, 80, 0));
@@ -32,5 +32,5 @@ input[type="submit"].btn.normal.login {
 }
 
 .bottom-group {
-    padding:15px 0;
+    padding:10px 0;
 }
