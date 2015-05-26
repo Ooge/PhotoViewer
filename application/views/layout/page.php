@@ -32,7 +32,7 @@
                     <?php
                         if($user){
                             ?>
-                            <li><a href="<?php echo base_url('/logout'); ?>"><?php echo $user->username; ?></li>
+                            <li><a href="<?php echo base_url('/logout'); ?>"><?php echo $user->username; ?></a></li>
                             <?php
                         } else {
                             ?>
