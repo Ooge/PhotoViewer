@@ -78,7 +78,7 @@
         					Uploading an image is easy as 1, 2, 3! Just select your image, enter a title and description for your image, and hit that Upload button!
         				</p>
         				<div class="input-group">
-        					<input type="file" name="userfile" id="image" accept=".png,.jpg,.gif">
+        					<input type="file" name="userfile" id="image-file" accept=".png,.jpg,.gif">
         					<br><label for="image">.png, .jpg and .gif only. 10MB limit.</label>
         				</div>
         				<div class="input-group">

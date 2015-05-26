@@ -36,7 +36,9 @@ Ooge.global = {
 				processData: false,
 				success: function(data) {
 					if(data.success){
-						$('#image-upload').reset();
+						$('#image-file').val('');
+						$('#image-title').val('');
+						$('#image-desc').val('');
 						$('#send-file').html('<i class="fa fa-check"></i>&nbsp;Uploaded');
 					} else {
 						$('#error').html('There has been an error while uploading. Try again.');
