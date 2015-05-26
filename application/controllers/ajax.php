@@ -39,7 +39,7 @@ class Ajax extends CI_Controller {
                 } else {
                     // Was successful. Add upload to MySQL table and exit the user, parsing image info.
                     $imgInfo = $this->upload->data();  // Get image data
-
+                    $temp = array('filename' => $newFileName, 'ext' => $fileExtension);
                     // Create an array of data to be inserted into the MySQL table.
                     $insertData = array(
                         'user_id' => $user->id,
@@ -51,7 +51,7 @@ class Ajax extends CI_Controller {
                     // Insert the array into the uploads MySQL table.
                     $this->db->insert('uploads', $insertData);
                     // Exit.
-                    $this->_exit(200, null, $imgInfo);
+                    $this->_exit(200, null, $temp);
                 }
                 break;
         }
