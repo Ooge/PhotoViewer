@@ -100,7 +100,7 @@
         	</div>
         </div>
 
-        <script src="assets/js/jquery.js" type="text/javascript"></script>
+        <script src="assets/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="assets/js/global.js" type="text/javascript"></script>
         <?php echo $page->scripts(); ?>
         <script>
