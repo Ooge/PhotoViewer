@@ -27,9 +27,8 @@ Ooge.global = {
 			$('#send-file').html('<i class="fa fa-circle-o-notch fa-spin"></i>&nbsp;Uploading...');
 			$('#send-file').attr('disabled','disabled');
 			var data = new FormData(this);
-			data.append('action', 'upload');
 			$.ajax({
-				url: Ooge.base_url('ajax/file_handler.php'),
+				url: Ooge.base_url('ajax/file_handler/upload'),
 				type: 'POST',
 				data: data,
 				contentType: false,

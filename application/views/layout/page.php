@@ -72,13 +72,13 @@
         				<i class="fa fa-times"></i>
         			</div>
         		</div>
-        		<form id="image-upload" action="" method="post" enctype="multipart/form-data">
+                <?php echo form_open_multipart('', array('id' => 'image-upload'));?>
         			<div class="modal-body">
         				<p>
         					Uploading an image is easy as 1, 2, 3! Just select your image, enter a title and description for your image, and hit that Upload button!
         				</p>
         				<div class="input-group">
-        					<input type="file" name="image" id="image" accept=".png,.jpg,.gif">
+        					<input type="file" name="userfile" id="image" accept=".png,.jpg,.gif">
         					<br><label for="image">.png, .jpg and .gif only. 10MB limit.</label>
         				</div>
         				<div class="input-group">
