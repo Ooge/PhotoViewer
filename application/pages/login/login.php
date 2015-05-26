@@ -36,7 +36,7 @@ ob_start();
         <?php echo form_label('Remember me ', 'remember_me'); ?>
     </div>
     <div class="input-group">
-        <?php echo form_submit(array('class' => 'btn normal', 'name' => 'login_submit', 'value' => 'Login')); ?>
+        <?php echo form_submit(array('class' => 'btn normal login', 'name' => 'login_submit', 'value' => 'Login')); ?>
     </div>
     <?php echo form_close(); ?>
     <hr>
