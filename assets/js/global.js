@@ -20,6 +20,7 @@ Ooge.global = {
 		$('#upload_toggle').on('click', Ooge.global.handlers.openUploadsModal);
 		$('.modal-close').on('click', Ooge.global.handlers.closeUploadsModal);
 		$('#cancel-file').on('click', Ooge.global.handlers.closeUploadsModal);
+
 		$('#image-upload').on('submit', function(e){
 			e.preventDefault();
 			$('#error').html('');

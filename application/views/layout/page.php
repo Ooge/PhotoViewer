@@ -25,7 +25,7 @@
                 </div>
                 <div class="nav-left">
                     <ul>
-                        <li class="important"><a id="upload_toggle" href="javascript:void(0);"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</a></li>
+                        <a id="upload_toggle" href="javascript:void(0);"><li class="important"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</li></a>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -33,15 +33,15 @@
                         if($user){
                             if($user->get_rank() == 'admin'){
                             ?>
-                            <li><a style="color:#D40000;" href="<?php echo base_url('/admin'); ?>">Admin</a>
+                            <a style="color:#D40000;" href="<?php echo base_url('/admin'); ?>"><li>Admin</li></a>
                             <?php } ?>
-                            <li><a href="<?php echo base_url('/logout'); ?>"><?php echo $user->username; ?></a></li>
+                            <a href="<?php echo base_url('/logout'); ?>"><li><?php echo $user->username; ?></li></a>
                             <?php
                         } else {
                             ?>
                             <ul>
-                                <li><a href="<?php echo base_url('/login'); ?>">Login</a></li>
-                                <li class="important"><a href="<?php echo base_url('/register'); ?>">Register</a></li>
+                                <a href="<?php echo base_url('/login'); ?>"><li>Login</li></a>
+                                <a href="<?php echo base_url('/register'); ?>"><li class="important">Register</li></a>
                             </ul>
                             <?php
                         }
