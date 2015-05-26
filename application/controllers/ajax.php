@@ -13,7 +13,7 @@ class Ajax extends CI_Controller {
 
         switch($type){
             case 'upload':
-                $config['upload_path'] = '../../uploads';
+                $config['upload_path'] = FCPATH . 'uploads';
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size'] = 10000;
 
