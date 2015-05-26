@@ -17,12 +17,6 @@ input[type="password"] {
     background-color: #151515;
     color: #fff;
 }
-
-input[type="text"],
-input[type="password"]:focus {
-    border: 3px solid #47A0D1;
-}
-
 .login-title {
     margin-bottom:20px;
 }
