@@ -29,3 +29,7 @@ hr{
 input[type="submit"].btn.normal.login {
     width: 355px;
 }
+
+.bottom-group {
+    height:50px;
+}
