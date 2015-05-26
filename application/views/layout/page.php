@@ -37,7 +37,7 @@
             </div>
         </div>
         <?php
-        if($page->has_container){
+        if($page->has_container()){
             ?>
             <div class="c1024" id="container">
                 <?php echo $page->content(); ?>
@@ -47,7 +47,7 @@
             echo $page->content();
         }
         ?>
-        
+
         <script src="assets/js/jquery.js" type="text/javascript"></script>
         <script src="assets/js/global.js" type="text/javascript"></script>
         <?php echo $page->scripts(); ?>
