@@ -26,7 +26,7 @@ class Ajax extends CI_Controller {
                 $config['allowed_types'] = 'gif|jpg|png';       // Filetypes we allow
                 $config['max_size'] = 10000;                    // Allow up to 10MB files
                 // Using a helper function, generate a random name for the file
-                $config['file_name'] =  generate_random(10) . $fileExtension;
+                $config['file_name'] =  generate_random(5) . $fileExtension;
 
                 // Load the upload class, parsing in the config values set above.
                 $this->load->library('upload', $config);
