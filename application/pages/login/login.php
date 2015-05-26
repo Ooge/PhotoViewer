@@ -30,10 +30,10 @@ ob_start();
     <div class="input-group">
         <input type="password" name="password" id="password" placeholder="Password">
     </div>
-
-    <?php echo form_checkbox('remember_me', '1', TRUE); ?>
-    <?php echo form_label('Remember me ', 'remember_me'); ?>
-
+    <div class="input-group">
+        <?php echo form_checkbox('remember_me', '1', TRUE); ?>
+        <?php echo form_label('Remember me ', 'remember_me'); ?>
+    </div>
     <?php echo form_submit(array('class' => 'button success', 'name' => 'login_submit', 'value' => 'Login')); ?>
     <?php echo form_close(); ?>
 </div>
