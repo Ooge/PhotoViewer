@@ -45,7 +45,7 @@ class Ajax extends CI_Controller {
                         'user_id' => $user->id,
                         'title' => $_POST['image-title'],
                         'description' => $_POST['image-desc'],
-                        'file' => FCPATH . 'uploads/' . $newFileName,
+                        'file' => '/uploads/' . $newFileName,
                         'time' => time()
                     );
                     // Insert the array into the uploads MySQL table.
