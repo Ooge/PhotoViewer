@@ -20,7 +20,7 @@ input[type="email"] {
 }
 
 select {
-    padding: 10px 20px;
+    padding: 10px 0px 10px 20px;
     font-size: 12pt;
     font-family: Raleway, sans-serif;
     font-weight: bold;
