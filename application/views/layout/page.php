@@ -25,7 +25,7 @@
                 </div>
                 <div class="nav-left">
                     <ul>
-                        <li class="important"><a href="<?php echo base_url('/upload'); ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</a></li>
+                        <li class="important"><a id="upload_toggle" href="javascript:void(0);"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</a></li>
                     </ul>
                 </div>
                 <div class="nav-right">
