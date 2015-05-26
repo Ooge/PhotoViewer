@@ -142,10 +142,7 @@ a:hover {
 	padding: 10px 20px;
 	font-weight: bold;
 	border: 0;
-}
-
-.btn::after{
-	content:' ';
+	margin-right:5px;
 }
 
 .btn.success {
