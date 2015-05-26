@@ -141,14 +141,17 @@ a:hover {
 
 .btn.success {
 	background-color: #33CC00;
+	color:#fff;
 }
 
 .btn.error {
 	background-color: #DB0000;
+	color:#fff;
 }
 
 .btn.normal {
 	background-color: #53BBF4;
+	color:#fff;
 }
 
 .btn.success:hover {
