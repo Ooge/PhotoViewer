@@ -1,0 +1,17 @@
+.gallery {
+	width: 1024px;
+	margin:0 auto;
+	padding:0;
+	padding-left:4px;
+}
+
+.gallery .gallery-item {
+	padding:5px;
+	width:236px;
+	height:236px;
+}
+
+.gallery .gallery-item:hover {
+	padding:0;
+	border:5px solid #47A0D1;
+}
