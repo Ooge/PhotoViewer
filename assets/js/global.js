@@ -39,7 +39,7 @@ Ooge.global = {
 						$('#image-file').val('');
 						$('#image-title').val('');
 						$('#image-desc').val('');
-						$('#error').html('File Uploaded!');
+						$('#send-file').html('<i class="fa fa-upload"></i>&nbsp;Upload');
 						$('#send-file').removeAttr('disabled');
 					} else {
 						$('#error').html('There has been an error while uploading. Try again.');
