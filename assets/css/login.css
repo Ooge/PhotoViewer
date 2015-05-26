@@ -12,4 +12,5 @@ input[type="password"] {
     font-size: 16pt;
     font-family: Raleway, sans-serif;
     font-weight: bold;
+    border: 2px solid #53BBF4;
 }
