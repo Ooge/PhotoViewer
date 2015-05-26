@@ -37,7 +37,9 @@ ob_start();
     </div>
     <?php echo form_close(); ?>
     <hr>
-    <p><a href="/login">Back to Login</a></p>
+    <div class="bottom-group">
+        Already have an account? <a href="/login">Go Login!</a>
+    </div>
 </div>
 
 <?php
