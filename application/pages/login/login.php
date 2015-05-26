@@ -34,7 +34,9 @@ ob_start();
         <?php echo form_checkbox('remember_me', '1', TRUE); ?>
         <?php echo form_label('Remember me ', 'remember_me'); ?>
     </div>
-    <?php echo form_submit(array('class' => 'button success', 'name' => 'login_submit', 'value' => 'Login')); ?>
+    <div class="input-group">
+        <?php echo form_submit(array('class' => 'button success', 'name' => 'login_submit', 'value' => 'Login')); ?>
+    </div>
     <?php echo form_close(); ?>
 </div>
 
