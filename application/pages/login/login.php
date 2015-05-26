@@ -24,8 +24,12 @@ ob_start();
     </span>
 
     <?php echo form_open('login_user'); ?>
-    <input type="text" name="username" id="username" placeholder="Username">
-    <input type="password" name="password" id="password" placeholder="Password">
+    <div class="input-group">
+        <input type="text" name="username" id="username" placeholder="Username">
+    </div>
+    <div class="input-group">
+        <input type="password" name="password" id="password" placeholder="Password">
+    </div>
 
     <?php echo form_checkbox('remember_me', '1', TRUE); ?>
     <?php echo form_label('Remember me ', 'remember_me'); ?>
