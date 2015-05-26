@@ -51,13 +51,13 @@ Ooge.global = {
 				}
 			});
 		});
-		Ooge.global.loadImages();
+		//Ooge.global.loadImages();
 	},
 	loadImages: function() {
 		$.ajax({
 			url: Ooge.base_url('ajax/file_handler.php'),
 			type: 'POST',
-			data: { action: "load"},
+			data: { action: "load" },
 			success: function(data) {
 				if(data.success){
 					for(var i = 0; i < data.files.length; i++) {
