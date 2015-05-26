@@ -39,6 +39,10 @@ ob_start();
         <?php echo form_submit(array('class' => 'btn success', 'name' => 'login_submit', 'value' => 'Login')); ?>
     </div>
     <?php echo form_close(); ?>
+    <hr>
+    <div class="bottom-group">
+        Don't have an account? <a href="<?php echo base_url('/register'); ?>">Click here to register</a>
+    </div>
 </div>
 
 <?php
