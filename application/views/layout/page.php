@@ -31,7 +31,10 @@
                 <div class="nav-right">
                     <?php
                         if($user){
+                            if($user->get_rank() == 'admin'){
                             ?>
+                            <li><a style="color:#D40000;" href="<?php echo base_url('/admin'); ?>">Admin</a>
+                            <?php } ?>
                             <li><a href="<?php echo base_url('/logout'); ?>"><?php echo $user->username; ?></a></li>
                             <?php
                         } else {
