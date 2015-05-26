@@ -156,12 +156,15 @@ a:hover {
 
 .btn.success:hover {
 	background-color: #2FB502;
+	cursor:pointer;
 }
 
 .btn.error:hover {
 	background-color: #B30000;
+	cursor:pointer;
 }
 
 .btn.normal:hover {
 	background-color: #3C98C9;
+	cursor:pointer;
 }
