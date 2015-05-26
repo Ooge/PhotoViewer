@@ -7,6 +7,7 @@ ob_start();
 ?>
 
 <div class="login_container">
+    <h2>Login</h2>
     <span style="color:red; font-weight:bold;">
         <?php
         echo validation_errors();
