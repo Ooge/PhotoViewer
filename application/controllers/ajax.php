@@ -20,13 +20,14 @@ class Ajax extends CI_Controller {
                 // Get the file extension through exploding the file name by . and
                 // getting the last element.
                 $fileExtension = end(explode('.',$_FILES['userfile']['name']));
+                $newFileName = generate_random(5) . $fileExtension;
 
                 // Here we setup our upload configuration
                 $config['upload_path'] = FCPATH . 'uploads';    // Where we want to upload
                 $config['allowed_types'] = 'gif|jpg|png';       // Filetypes we allow
                 $config['max_size'] = 10000;                    // Allow up to 10MB files
                 // Using a helper function, generate a random name for the file
-                $config['file_name'] =  generate_random(5) . $fileExtension;
+                $config['file_name'] =  $newFileName;
 
                 // Load the upload class, parsing in the config values set above.
                 $this->load->library('upload', $config);
@@ -36,8 +37,21 @@ class Ajax extends CI_Controller {
                     // Error occurred while uploading
                     $this->_exit(400,'Error uploading File', array('error' => $this->upload->display_errors()));
                 } else {
-                    // Was successful, exit the user, parsing the uploaded files info.
-                    $this->_exit(200, null, $this->upload->data());
+                    // Was successful. Add upload to MySQL table and exit the user, parsing image info.
+                    $imgInfo = $this->upload->data();  // Get image data
+
+                    // Create an array of data to be inserted into the MySQL table.
+                    $insertData = array(
+                        'user_id' => $user->id,
+                        'title' => $_POST['image-title'],
+                        'description' => $_POST['image-desc'],
+                        'file' => FCPATH . 'uploads/' . $newFileName,
+                        'time' => time()
+                    );
+                    // Insert the array into the uploads MySQL table.
+                    $this->db->insert('uploads', $insertData);
+                    // Exit.
+                    $this->_exit(200, null, $imgInfo);
                 }
                 break;
         }
