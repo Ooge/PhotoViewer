@@ -33,7 +33,7 @@ ob_start();
         <input type="password" name="password_repeat" value="" id="password_repeat" placeholder="Confirm Password">
     </div>
     <div class="input-group">
-        <input type="submit" name="register_submit" value="Create User" class="button success">
+        <?php echo form_submit(array('class' => 'btn normal login', 'name' => 'register_submit', 'value' => 'Create User')); ?>
     </div>
     <?php echo form_close(); ?>
     <hr>
