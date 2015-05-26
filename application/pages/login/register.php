@@ -23,7 +23,7 @@ ob_start();
     </div>
     <div class="input-group">
         <?php echo form_dropdown('day', build_days(), set_value('day', 'err'), 'id="day_dropdown"'); ?>
-        <?php echo form_dropdown('month', build_months(), set_value('month', 'err'), 'style="width:100px" id="month_dropdown"'); ?>
+        <?php echo form_dropdown('month', build_months(), set_value('month', 'err'), 'id="month_dropdown"'); ?>
         <?php echo form_dropdown('year', build_years(), set_value('year', 'err'), 'id="year_dropdown"'); ?>
     </div>
     <div class="input-group">
