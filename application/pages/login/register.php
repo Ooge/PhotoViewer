@@ -5,7 +5,7 @@ $scripts = array();
 $title = 'Register';
 ob_start();
 ?>
-<div id="login_container">
+<div class="login_container">
 
     <span style="color:red; font-weight:bold;"><?php echo validation_errors(); ?></span>
     <?php echo form_open('register_user', array('data-abide' => 1)); ?>
