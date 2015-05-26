@@ -130,3 +130,35 @@ a:hover {
 .input-group {
 	margin:10px;
 }
+
+.btn {
+	font-size: 13pt;
+	font-family: raleway;
+	padding: 10px 20px;
+	font-weight: bold;
+	border: 0;
+}
+
+.btn.success {
+	background-color: #33CC00;
+}
+
+.btn.error {
+	background-color: #DB0000;
+}
+
+.btn.normal {
+	background-color: #53BBF4;
+}
+
+.btn.success:hover {
+	background-color: #2FB502;
+}
+
+.btn.error:hover {
+	background-color: #B30000;
+}
+
+.btn.normal:hover {
+	background-color: #3C98C9;
+}
