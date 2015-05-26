@@ -29,10 +29,20 @@
                     </ul>
                 </div>
                 <div class="nav-right">
-                    <ul>
-                        <li><a href="<?php echo base_url('/login'); ?>">Login</a></li>
-                        <li class="important"><a href="<?php echo base_url('/register'); ?>">Register</a></li>
-                    </ul>
+                    <?php
+                        if($user){
+                            ?>
+                            <li><a href="<?php echo base_url('/logout'); ?>"><?php echo $user->username; ?></li>
+                            <?php
+                        } else {
+                            ?>
+                            <ul>
+                                <li><a href="<?php echo base_url('/login'); ?>">Login</a></li>
+                                <li class="important"><a href="<?php echo base_url('/register'); ?>">Register</a></li>
+                            </ul>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>
