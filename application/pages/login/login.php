@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/login/login.css');
+$stylesheets = array('assets/css/login.css');
 $scripts = array();
 $title = 'Login';
 ob_start();
