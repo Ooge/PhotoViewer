@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/login/login.main.css');
+$stylesheets = array('assets/css/login/login.css');
 $scripts = array();
 $title = 'Login';
 ob_start();
@@ -25,8 +25,6 @@ ob_start();
 <input type="text" name="username" id="username" placeholder="Username">
 <input type="password" name="password" id="password" placeholder="Password">
 
-
-
 <?php echo form_checkbox('remember_me', '1', TRUE); ?>
 <?php echo form_label('Remember me ', 'remember_me'); ?>
 
@@ -37,4 +35,4 @@ ob_start();
 <?php
 $content = ob_get_contents();
 ob_end_clean();
-return new Page($stylesheets, $scripts, $title, $content);
+return new Page($stylesheets, $scripts, $title, $content, false);
