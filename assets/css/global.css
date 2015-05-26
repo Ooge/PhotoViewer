@@ -144,6 +144,10 @@ a:hover {
 	border: 0;
 }
 
+.btn::after{
+	content:' ';
+}
+
 .btn.success {
 	background-color: #33CC00;
 	color:#fff;
