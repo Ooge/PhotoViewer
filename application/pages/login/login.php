@@ -5,31 +5,33 @@ $scripts = array();
 $title = 'Login';
 ob_start();
 ?>
-<span style="color:red; font-weight:bold;">
-    <?php
-    echo validation_errors();
-    if(isset($_GET['code'])){
-        switch($_GET['code']) {
-            case 1:
-                echo '<p>Username or password was incorrect!</p>';
-                break;
-            default:
-                echo '<p>Unknown Error</p>';
-                break;
+
+<div class="login_container">
+    <span style="color:red; font-weight:bold;">
+        <?php
+        echo validation_errors();
+        if(isset($_GET['code'])){
+            switch($_GET['code']) {
+                case 1:
+                    echo '<p>Username or password was incorrect!</p>';
+                    break;
+                default:
+                    echo '<p>Unknown Error</p>';
+                    break;
+            }
         }
-    }
-    ?>
-</span>
+        ?>
+    </span>
 
-<?php echo form_open('login_user'); ?>
-<input type="text" name="username" id="username" placeholder="Username">
-<input type="password" name="password" id="password" placeholder="Password">
+    <?php echo form_open('login_user'); ?>
+    <input type="text" name="username" id="username" placeholder="Username">
+    <input type="password" name="password" id="password" placeholder="Password">
 
-<?php echo form_checkbox('remember_me', '1', TRUE); ?>
-<?php echo form_label('Remember me ', 'remember_me'); ?>
+    <?php echo form_checkbox('remember_me', '1', TRUE); ?>
+    <?php echo form_label('Remember me ', 'remember_me'); ?>
 
-<?php echo form_submit(array('class' => 'button success', 'name' => 'login_submit', 'value' => 'Login')); ?>
-<?php echo form_close(); ?>
+    <?php echo form_submit(array('class' => 'button success', 'name' => 'login_submit', 'value' => 'Login')); ?>
+    <?php echo form_close(); ?>
 </div>
 
 <?php
