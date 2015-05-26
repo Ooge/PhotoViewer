@@ -4,3 +4,11 @@
     background-color:#252525;
     padding:10px;
 }
+
+input[type="text"] {
+    width: 355px;
+    padding: 10px;
+    font-size: 16pt;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+}
