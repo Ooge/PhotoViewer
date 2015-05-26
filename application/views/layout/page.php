@@ -90,8 +90,8 @@
 
         			</div>
         			<div class="modal-footer">
-        				<button class="pull-right" type="submit" id="send-file"><i class="fa fa-upload"></i>&nbsp;Upload</button>
-        				<button class="red pull-right" id="cancel-file"><i class="fa fa-times"></i>&nbsp;Cancel</button>
+        				<button class="pull-right btn success" type="submit" id="send-file"><i class="fa fa-upload"></i>&nbsp;Upload</button>
+        				<button class="pull-right btn error" id="cancel-file"><i class="fa fa-times"></i>&nbsp;Cancel</button>
         				<span id="error" class="pull-right"></span>
         				<div style="clear:both;"></div>
         			</div>

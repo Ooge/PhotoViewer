@@ -234,6 +234,41 @@ a:hover {
 	padding-bottom: 10px;
 }
 
+label[for="image"] {
+	font-size:9pt;
+	color:#ff0000;
+}
+
+input[type="file"] {
+	border:2px solid #252525;
+	padding:5px;
+	height:20px;
+	width:660px;
+}
+
+input[type="text"] {
+	border:2px solid #252525;
+	height:20px;
+	width:660px;
+	font-size:13pt;
+	padding:5px;
+	background-color:#222222;
+	color:#fff;
+}
+
+textarea#image-desc {
+	border:2px solid #252525;
+	font-family: "Raleway", sans-serif;
+	width:660px;
+	max-width:660px;
+	height:200px;
+	max-height:400px;
+	padding:5px;
+	font-size:12pt;
+	background-color:#222222;
+	color:#fff;
+}
+
 .pull-right {
 	float:right;
 }
