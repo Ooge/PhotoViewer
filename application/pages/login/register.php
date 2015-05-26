@@ -27,4 +27,4 @@ ob_start();
 <?php
 $content = ob_get_contents();
 ob_end_clean();
-return new Page($stylesheets, $scripts, $title, $content);
+return new Page($stylesheets, $scripts, $title, $content, false);
