@@ -18,6 +18,18 @@ input[type="email"] {
     background-color: #151515;
     color: #fff;
 }
+
+select {
+    padding: 10px 20px;
+    font-size: 12pt;
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    border: 3px solid #101010;
+    background-color: #151515;
+    color: #fff;
+    -webkit-appearance: none;
+}
+
 .login-title {
     margin-bottom:20px;
 }
