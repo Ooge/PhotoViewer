@@ -173,3 +173,67 @@ a:hover {
 	background-color: #3C98C9;
 	cursor:pointer;
 }
+
+.modalBack {
+	display:none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 99999;
+}
+.modal {
+	display:none;
+    width: 740px;
+    position: relative;
+    margin: 50px auto;
+    background: #353535;
+    z-index: 999999;
+
+}
+
+.modal-header{
+	width:700px;
+	padding:20px;
+	border-bottom: 2px solid #252525;
+	height:30px;
+}
+
+.modal-body{
+	width:700px;
+	padding: 20px 20px 0 20px;
+	clear:both;
+}
+
+.modal-footer{
+	width:700px;
+	padding:20px;
+}
+
+.modal-title {
+	float:left;
+}
+
+.modal-close{
+	position: absolute;
+	top:20px;
+	right:25px;
+
+	font-size:16pt;
+}
+
+.modal-close:hover {
+	color:#dd0000;
+	cursor:pointer;
+}
+
+.modal-body p {
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.pull-right {
+	float:right;
+}

@@ -61,6 +61,45 @@
         }
         ?>
 
+
+        <div class="modalBack">
+        	<div class="modal">
+        		<div class="modal-header">
+        			<div class="modal-title">
+        				<h2>Upload an Image</h2>
+        			</div>
+        			<div class="modal-close">
+        				<i class="fa fa-times"></i>
+        			</div>
+        		</div>
+        		<form id="image-upload" action="" method="post" enctype="multipart/form-data">
+        			<div class="modal-body">
+        				<p>
+        					Uploading an image is easy as 1, 2, 3! Just select your image, enter a title and description for your image, and hit that Upload button!
+        				</p>
+        				<div class="form-item">
+        					<input type="file" name="image" id="image" accept=".png,.jpg,.gif">
+        					<br><label for="image">.png, .jpg and .gif only. 10MB limit.</label>
+        				</div>
+        				<div class="form-item">
+        					<input type="text" name="image-title" id="image-title" placeholder="Image Title">
+        				</div>
+        				<div class="form-item">
+        					<textarea id="image-desc" name="image-desc" placeholder="Image Description"></textarea>
+        				</div>
+
+        			</div>
+        			<div class="modal-footer">
+        				<button class="pull-right" type="submit" id="send-file"><i class="fa fa-upload"></i>&nbsp;Upload</button>
+        				<button class="red pull-right" id="cancel-file"><i class="fa fa-times"></i>&nbsp;Cancel</button>
+        				<span id="error" class="pull-right"></span>
+        				<div style="clear:both;"></div>
+        			</div>
+        		</form>
+        		<div style="clear:both;"></div>
+        	</div>
+        </div>
+
         <script src="assets/js/jquery.js" type="text/javascript"></script>
         <script src="assets/js/global.js" type="text/javascript"></script>
         <?php echo $page->scripts(); ?>
