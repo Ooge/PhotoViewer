@@ -15,3 +15,8 @@ input[type="password"] {
     font-weight: bold;
     border: 2px solid #53BBF4;
 }
+
+h2 {
+    margin:0;
+    padding:0;
+}
