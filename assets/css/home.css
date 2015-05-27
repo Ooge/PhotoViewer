@@ -9,15 +9,15 @@
 	position: relative;
 	display:inline-block;
 	padding:5px;
-	width:225px;
-	height:225px;
+	width:219px;
+	height:219px;
 	border:5px solid #353535;
 	margin:5px;
 }
 
 .gallery .gallery-item img {
 	position: absolute;
-	clip: rect(0px,225px,225px,0px);
-	width:225px;
+	clip: rect(0px,219px,219px,0px);
+	width:219px;
     height: auto;
 }
