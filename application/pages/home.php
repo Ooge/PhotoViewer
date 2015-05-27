@@ -13,7 +13,7 @@ ob_start();
 	<?php
 		if($latestImages != 0){
 			foreach($latestImages as $image){
-				echo '<img class="gallery-item" src="'.$image->file.'" alt="'.$image->title.'" title="'.$image->title.'" />';
+				echo '<a href="'.base_url($image->gid).'"><img class="gallery-item" src="'.$image->file.'" alt="'.$image->title.'" title="'.$image->title.'" /></a>';
 			}
 		} else {
 			echo 'No images posted. <a class="upload_toggle" href="javascript:void(0);">Be the first</a>';
