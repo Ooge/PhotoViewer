@@ -21,9 +21,3 @@
 	width:225px;
     height: auto;
 }
-
-.gallery .gallery-item:hover {
-	padding:0;
-	border:5px solid #47A0D1;
-	cursor:pointer;
-}
