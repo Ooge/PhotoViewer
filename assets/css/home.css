@@ -6,9 +6,17 @@
 }
 
 .gallery .gallery-item {
+	position: relative;
 	padding:5px;
 	width:236px;
 	height:236px;
+}
+
+.gallery .gallery-item img {
+	position: absolute;
+	clip: rect(0px,236px,236px,0px);
+	width:236px;
+    height: auto;
 }
 
 .gallery .gallery-item:hover {
