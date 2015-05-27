@@ -29,7 +29,7 @@
                             if($user){
                                 echo '<a class="upload_toggle" href="javascript:void(0);"><li class="important"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</li></a>';
                             } else {
-                                echo 'Login to upload';
+                                echo '<a href="'.base_url('/login').'"><li>Login to upload</li></a>';
                             }
                         ?>
 
