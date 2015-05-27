@@ -8,7 +8,6 @@
 .gallery .gallery-item {
 	padding:5px;
 	height:236px;
-	position: absolute;
 	clip: rect(0px,236px,236px,0px);
 	width: 236px;
 	height: auto;
