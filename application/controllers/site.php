@@ -291,27 +291,26 @@ class Site extends CI_Controller {
     }
 
     public function fourohfour_override() {
-        $username = $this->uri->segment(1);
-        $username = strtolower($username);
-        if($username){
-            $this->db->where('username', $username);
-            $query = $this->db->get('users', 1);
+        $imageGID = $this->uri->segment(1);
+        if($imageGID){
+            $this->db->where('gid', $username);
+            $query = $this->db->get('uploads', 1);
 
             if($query->num_rows() > 0){
-                $profile_user = User::get_by_name($username);
+                $imageObj = Image::get_by_gid($gid);
 
-                if($profile_user) {
+                if($imageObj) {
                     $self = false;
                     if(($logged_in_user = $this->m_session->get_current_user())){
-                        if($logged_in_user->id == $profile_user->id)
+                        if($logged_in_user->id == $imageObj->user_id)
                             $self = true;
                         else
                             $self = false;
                     }
 
                     $page_data = array(
-                        'main_content' => 'profile/view',
-                        'profile_user' => $profile_user,
+                        'main_content' => 'view_image',
+                        'image_data' => $imageObj,
                         'is_self'      => $self
                         );
                     $this->load->view('template', $page_data);

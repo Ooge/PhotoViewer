@@ -3,14 +3,17 @@
 $stylesheets = array('assets/css/view_image.css');
 $scripts = array('assets/js/image_view.js');
 $title = 'View Image';
+
+$user = $this->m_session->get_current_user();
+$author = $image_data->get_author();
 ob_start();
 ?>
 <div class="image-header">
-	<h2>Sideways life - Out the window</h2>
-	<span class="muted">By <a href="/ryan">Ryan Thorn</a> - 17 hours ago</span>
+	<h2><?php echo $image_data->title; ?></h2>
+	<span class="muted">By <a href="<?php echo base_url('/user/'.$author->username); ?>"><?php echo $author->username; ?></a> - <?php echo time_ago($image_data->time); ?></span>
 </div>
 <div class="image-container">
-	<img class="image-main" src="<?php echo base_url('assets/img/real-image2.jpg'); ?>" />	
+	<img class="image-main" src="<?php echo base_url($image_data->file); ?>" />
 </div>
 <div class="sidebar-container">
 	<button class="btn prev"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Prev</button>
