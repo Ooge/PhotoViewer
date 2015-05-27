@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User extends TableObject {
+class Image extends TableObject {
     public $id;
     private $db;
 
