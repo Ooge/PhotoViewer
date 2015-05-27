@@ -5,7 +5,7 @@ class M_image extends CI_Model {
     public function get_latest_images($limit) {
         $this->db->where('deleted', 0);
         $this->db->order_by('time', 'DESC');
-        $query = $this->db->get('uploads', 0, $limit);
+        $query = $this->db->get('uploads', $limit);
 
         if($query->num_rows() > 0) {
             $results = $query->result_array();
