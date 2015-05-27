@@ -297,7 +297,7 @@ class Site extends CI_Controller {
             $query = $this->db->get('uploads', 1);
 
             if($query->num_rows() > 0){
-                $imageObj = Image::get_by_gid($gid);
+                $imageObj = Image::get_by_gid($imageGID);
 
                 if($imageObj) {
                     $self = false;
