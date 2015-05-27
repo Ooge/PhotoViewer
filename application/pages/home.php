@@ -3,22 +3,18 @@
 $stylesheets = array('assets/css/home.css');
 $scripts = array();
 $title = 'Home';
+$CI =& get_instance();
+
+$user = $CI->m_session->get_current_user();
 ob_start();
 ?>
 <h1>Gallery</h1>
 <div class="gallery">
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
-	<img class="gallery-item" src="assets/img/placeholder-236x236.png" alt="placeholder-image" title="Placeholder Image" />
+	<?php
+		foreach($latestImages as $image){
+			echo '<img class="gallery-item" src="'.$image->file.'" alt="'.$image->title.'" title="'.$image->title.'" />';
+		}
+	?>
 </div>
 <?php
 $content = ob_get_contents();

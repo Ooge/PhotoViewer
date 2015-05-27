@@ -3,15 +3,12 @@
 class Site extends CI_Controller {
 
 	public function index() {
-        if(($user = $this->m_session->get_current_user())) {
-            // Show logged in page TODO: make seperate pages, for now just loading home.
-            $data['main_content'] = 'home';
-            $this->load->view('template', $data);
-        } else {
-            // Show logged out page
-            $data['main_content'] = 'home';
-            $this->load->view('template', $data);
-        }
+        // Get latest images
+		$this->load->model('m_image');
+
+        $data['main_content'] = 'home';
+		$data['latestImages'] = $this->m_image->get_latest_images(10);
+        $this->load->view('template', $data);
 	}
 
 	public function login() {
