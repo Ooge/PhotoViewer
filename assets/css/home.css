@@ -7,10 +7,8 @@
 
 .gallery .gallery-item {
 	padding:5px;
+	width:236px;
 	height:236px;
-	clip: rect(0px,236px,236px,0px);
-	width: 236px;
-	height: auto;
 }
 
 .gallery .gallery-item:hover {
