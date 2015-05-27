@@ -3,8 +3,9 @@
 $stylesheets = array('assets/css/view_image.css');
 $scripts = array('assets/js/image_view.js');
 $title = 'View Image';
+$CI =& get_instance();
 
-$user = $this->m_session->get_current_user();
+$user = $CI->m_session->get_current_user();
 $author = $image_data->get_author();
 ob_start();
 ?>
