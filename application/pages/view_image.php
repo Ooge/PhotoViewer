@@ -80,16 +80,6 @@ ob_start();
 			</div>
 			<div class="comment-right">
 				<div class="comment-top"><span class="comment-username">Ryan Thorn</span><span class="comment-time-posted"> - 16 minutes ago</span></div>
-				<span class="comment-body">I really like this image, I think it portrays that everyone is a bit sideways until righted. #Kappa</span>
-			</div>
-		</div>
-
-		<div class="comment-item">
-			<div class="comment-left">
-				<img src="<?php echo base_url('assets/img/placeholder-70x70.png'); ?>" />
-			</div>
-			<div class="comment-right">
-				<div class="comment-top"><span class="comment-username">Ryan Thorn</span><span class="comment-time-posted"> - 16 minutes ago</span></div>
 				<span class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie sed est at pharetra. Suspendisse sollicitudin faucibus commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempus cursus neque, sit amet bibendum erat ornare nec. Aenean eget odio ligula.
 
 				Maecenas massa sapien, mattis id fermentum vel, mollis vel libero. Nunc venenatis, risus a dapibus vulputate, nibh est sagittis nunc, eget vehicula ex quam vehicula neque. Maecenas mattis porttitor consequat. Proin laoreet aliquam convallis. Phasellus quis velit vitae risus placerat malesuada.</span>
@@ -105,16 +95,6 @@ ob_start();
 				<span class="comment-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas molestie sed est at pharetra. Suspendisse sollicitudin faucibus commodo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis tempus cursus neque, sit amet bibendum erat ornare nec. Aenean eget odio ligula.
 
 				Maecenas massa sapien, mattis id fermentum vel, mollis vel libero. Nunc venenatis, risus a dapibus vulputate, nibh est sagittis nunc, eget vehicula ex quam vehicula neque. Maecenas mattis porttitor consequat. Proin laoreet aliquam convallis. Phasellus quis velit vitae risus placerat malesuada.</span>
-			</div>
-		</div>
-
-		<div class="comment-item">
-			<div class="comment-left">
-				<img src="<?php echo base_url('assets/img/placeholder-70x70.png'); ?>" />
-			</div>
-			<div class="comment-right">
-				<div class="comment-top"><span class="comment-username">Ryan Thorn</span><span class="comment-time-posted"> - 16 minutes ago</span></div>
-				<span class="comment-body">I like pingas</span>
 			</div>
 		</div>
 	</div>
