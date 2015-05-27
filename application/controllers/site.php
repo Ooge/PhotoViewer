@@ -293,7 +293,7 @@ class Site extends CI_Controller {
     public function fourohfour_override() {
         $imageGID = $this->uri->segment(1);
         if($imageGID){
-            $this->db->where('gid', $gid);
+            $this->db->where('gid', $imageGID);
             $query = $this->db->get('uploads', 1);
 
             if($query->num_rows() > 0){
