@@ -17,7 +17,7 @@ Ooge.global = {
 	},
 
 	init: function() {
-		$('#upload_toggle').on('click', Ooge.global.handlers.openUploadsModal);
+		$('.upload_toggle').on('click', Ooge.global.handlers.openUploadsModal);
 		$('.modal-close').on('click', Ooge.global.handlers.closeUploadsModal);
 		$('#cancel-file').on('click', Ooge.global.handlers.closeUploadsModal);
 

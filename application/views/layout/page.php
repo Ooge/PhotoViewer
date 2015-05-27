@@ -25,7 +25,7 @@
                 </div>
                 <div class="nav-left">
                     <ul>
-                        <a id="upload_toggle" href="javascript:void(0);"><li class="important"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</li></a>
+                        <a class="upload_toggle" href="javascript:void(0);"><li class="important"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload</li></a>
                     </ul>
                 </div>
                 <div class="nav-right">
