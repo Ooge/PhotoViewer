@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/home.css');
+$stylesheets = array(base_url('assets/css/home.css'));
 $scripts = array();
 $title = 'Home';
 $CI =& get_instance();

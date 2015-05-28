@@ -12,10 +12,10 @@
         <title>Ooge | <?php echo $page->title(); ?></title>
         <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600,700" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-        <link href="assets/css/global.css" rel="stylesheet" type="text/css" />
+        <link href="<?php echo base_url('assets/css/global.css'); ?>" rel="stylesheet" type="text/css" />
         <?php echo $page->stylesheets(); ?>
 
-        <link rel="icon" type="image/png" href="assets/img/favicon.png">
+        <link rel="icon" type="image/png" href="<?php echo base_url('assets/img/favicon.png'); ?>">
     </head>
     <body>
         <div class="topbar">
@@ -107,8 +107,8 @@
         	</div>
         </div>
 
-        <script src="assets/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="assets/js/global.js" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/js/vendor/jquery.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/js/global.js'); ?>" type="text/javascript"></script>
         <?php echo $page->scripts(); ?>
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

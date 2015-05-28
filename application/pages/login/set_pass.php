@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array(base_url('assets/css/login/login.main.css'));
+$stylesheets = array(base_url('assets/css/login.css'));
 $scripts = array();
 $title = 'Forgot Password';
 ob_start();
@@ -12,7 +12,7 @@ ob_start();
     </span>
 
     <span style="color:red; font-weight:bold;">
-        <?php 
+        <?php
         echo validation_errors();
         ?>
     </span>
@@ -37,10 +37,10 @@ ob_start();
         </div>
     </div>
 
-    <?php 
+    <?php
         echo form_hidden('code', $code);
-        echo form_submit(array('class' => 'button success', 'name' => 'forgot_submit', 'value' => 'Send')); 
-        echo form_close(); 
+        echo form_submit(array('class' => 'button success', 'name' => 'forgot_submit', 'value' => 'Send'));
+        echo form_close();
     ?>
 </div>
 
@@ -48,4 +48,3 @@ ob_start();
 $content = ob_get_contents();
 ob_end_clean();
 return new Page($stylesheets, $scripts, $title, $content);
-

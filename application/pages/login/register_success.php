@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/login/login.main.css');
+$stylesheets = array(base_url('assets/css/login.css'));
 $scripts = array();
 $title = 'Register Success';
 ob_start();
@@ -18,4 +18,3 @@ ob_start();
 $content = ob_get_contents();
 ob_end_clean();
 return new Page($stylesheets, $scripts, $title, $content);
-

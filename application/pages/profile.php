@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/profile.css');
-$scripts = array('assets/js/profile.js');
+$stylesheets = array(base_url('assets/css/profile.css'));
+$scripts = array(base_url('assets/js/profile.js'));
 $title = $user->username . '\'s Profile';
 
 $CI =& get_instance();

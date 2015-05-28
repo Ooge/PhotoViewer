@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$stylesheets = array('assets/css/view_image.css');
-$scripts = array('assets/js/image_view.js');
+$stylesheets = array(base_url('assets/css/view_image.css'));
+$scripts = array(base_url('assets/js/image_view.js'));
 $title = 'View Image';
 $CI =& get_instance();
 
