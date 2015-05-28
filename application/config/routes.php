@@ -51,7 +51,7 @@ $route['forgot_password'] = 'site/forgot_password';
 $route['recover_password.*'] = 'site/recover_password';
 $route['set_new_password'] = 'site/set_new_password';
 
-$route['user'] = 'user_v/index';
+$route['user.*'] = 'user_v/index';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
