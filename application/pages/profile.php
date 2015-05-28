@@ -4,8 +4,6 @@ $stylesheets = array('assets/css/profile.css');
 $scripts = array('assets/js/profile.js');
 $title = $user->username . '\'s Profile';
 $CI =& get_instance();
-
-$user = $CI->m_session->get_current_user();
 $author = $image_data->get_author();
 $profileImages = $profile->get_images(20);
 ob_start();
