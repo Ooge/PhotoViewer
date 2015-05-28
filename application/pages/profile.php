@@ -10,7 +10,7 @@ $profileImages = $profile->get_images(20);
 ob_start();
 ?>
 <div>
-    <?php echo $profileUser->username . '\'s Gallery'; ?>
+    <h1><?php echo $profileUser->username . '\'s Gallery'; ?></h1>
 </div>
 <div class="gallery">
 	<?php
