@@ -114,13 +114,13 @@ class Site extends CI_Controller {
         $this->form_validation->set_rules('month', 'Date of Birth', 'required|trim|xss_clean|callback_absdyb_is_drop_error');
         $this->form_validation->set_rules('year', 'Date of Birth', 'required|trim|xss_clean|callback_b4d229de_is_legal_age');
 
-        $this->form_validation->set_message('is_unique', 'The %s you have used has already been taken.');
+        $this->form_validation->set_message('is_unique', 'The username %s is already in use.');
 
         if($this->form_validation->run() != false) {
             // collect form data and hash pass
             // todo: check ip ban here
 
-            $dob = $this->input->post('year') . "-" . $this->input->post('month') . "-" . ($this->input->post('day') + 1);
+            $dob = $this->input->post('year') . "-" . $this->input->post('month') . "-" . $this->input->post('day');
             $form_data = array(
                 'username' => @$this->input->post('username'),
                 'firstname' => @$this->input->post('first_name'),
@@ -154,7 +154,7 @@ class Site extends CI_Controller {
         }
         $dob = ($this->input->post('day') + 1) . "-" . $this->input->post('month') . "-" . $year;
         if(under_thirteen($dob)){
-            $this->form_validation->set_message(__FUNCTION__, 'You must be 13 or older to create an account.');
+            $this->form_validation->set_message('b4d229de_is_legal_age', 'You must be 13 or older to create an account.');
             return false;
         } else {
             return true;
@@ -163,7 +163,7 @@ class Site extends CI_Controller {
 
     public function absdyb_is_drop_error($drop) {
         if($drop == 'err') {
-            $this->form_validation->set_message(__FUNCTION__, 'Please select a day or month in the dropdown.');
+            $this->form_validation->set_message('absdyb_is_drop_error', 'Please select a day or month in the dropdown.');
             return false;
         } else {
             return true;

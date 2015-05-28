@@ -1,4 +1,4 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 function build_countries() {
     $countries = array(
@@ -222,17 +222,46 @@ function build_months() {
 }
 
 function build_days() {
-    $days = array('err' => 'Day');
-    
-    for($i = 1; $i <= 31; $i++) {
-        $days[] = $i;
-    }
+    $days = array(
+        'err' => 'Day',
+        '1'   => '1',
+        '2'   => '2',
+        '3'   => '3',
+        '4'   => '4',
+        '5'   => '5',
+        '6'   => '6',
+        '7'   => '7',
+        '8'   => '8',
+        '9'   => '9',
+        '10'  => '10',
+        '11'  => '11',
+        '12'  => '12',
+        '13'  => '13',
+        '14'  => '14',
+        '15'  => '15',
+        '16'  => '16',
+        '17'  => '17',
+        '18'  => '18',
+        '19'  => '19',
+        '20'  => '20',
+        '21'  => '21',
+        '22'  => '22',
+        '23'  => '23',
+        '24'  => '24',
+        '25'  => '25',
+        '26'  => '26',
+        '27'  => '27',
+        '28'  => '28',
+        '29'  => '29',
+        '30'  => '30',
+        '31'  => '31'
+        );
 
     return $days;
 }
 
 function build_years() {
-    $err_array = array('err' => 'Years');
+    $err_array = array('err' => 'Year');
     $years = array_combine(range(date("Y"), 1900), range(date("Y"), 1900));
     $years = $err_array + $years;
     return $years;
