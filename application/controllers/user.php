@@ -18,7 +18,7 @@ class User_v extends CI_Controller {
                 );
             $this->load->view('template', $page_data);
         } else {
-            show_error(var_dump($request) . ' |||||||||| ' . var_dump($profileUser));
+            show_404();
         }
     }
 }
