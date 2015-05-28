@@ -3,9 +3,11 @@
 $stylesheets = array('assets/css/profile.css');
 $scripts = array('assets/js/profile.js');
 $title = $user->username . '\'s Profile';
+
 $CI =& get_instance();
 $author = $image_data->get_author();
 $profileImages = $profile->get_images(20);
+
 ob_start();
 ?>
 <div>
