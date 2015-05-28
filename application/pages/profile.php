@@ -2,10 +2,11 @@
 
 $stylesheets = array(base_url('assets/css/profile.css'));
 $scripts = array(base_url('assets/js/profile.js'));
-$title = $user->username . '\'s Profile';
+$title = $profileUser->username . '\'s Profile';
 
 $CI =& get_instance();
 $profileImages = $profile->get_images(20);
+$user = $this->m_session->get_current_user();
 
 ob_start();
 ?>

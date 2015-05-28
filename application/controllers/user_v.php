@@ -5,15 +5,17 @@ class User_v extends CI_Controller {
         $request = $this->uri->segment(2);
         $profileUser = User::get_by_name($request);
         if($profileUser) {
-            $user = $this->m_session->get_current_user();
-            $profile = $profileUser->get_profile();
-            $self = ($profileUser->id == $user->id);
+            if(($user = $this->m_session->get_current_user())){
+                $self = ($profileUser->id == $user->id);
+            } else {
+                $self = false;
+            }
 
+            $profile = $profileUser->get_profile();
             $page_data = array(
                 'main_content' => 'profile',
                 'profileUser' => $profileUser,
                 'profile' => $profile,
-                'user' => $user,
                 'is_self' => $self
                 );
             $this->load->view('template', $page_data);
