@@ -3,7 +3,8 @@
 class User_v extends CI_Controller {
     public function index() {
         $request = $this->uri->segment(2);
-        if(($profileUser = User::get_by_name($request))) {
+        $profileUser = User::get_by_name($request);
+        if($profileUser) {
             $user = $this->m_session->get_current_user();
             $profile = $profileUser->get_profile();
             $self = ($profileUser->id == $user->id);
