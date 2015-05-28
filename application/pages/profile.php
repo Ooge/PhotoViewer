@@ -6,7 +6,7 @@ $title = $profileUser->username . '\'s Profile';
 
 $CI =& get_instance();
 $profileImages = $profile->get_images(20);
-$user = $this->m_session->get_current_user();
+$user = $CI->m_session->get_current_user();
 
 ob_start();
 ?>
