@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $stylesheets = array(base_url('assets/css/admin.css'));
-$scripts = array(base_url('assets/js/vendor/highcharts.js'), base_url('assets/js/admin.js'));
+$scripts = array(base_url('assets/js/vendor/highcharts.js'),base_url('assets/js/vendor/highcharts.theme.dark.js'), base_url('assets/js/admin.js'));
 $title = 'Admin';
 $CI =& get_instance();
 
