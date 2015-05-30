@@ -89,10 +89,10 @@ Highcharts.theme = {
       },
       errorbar: {
          color: 'white'
-     },
-     pie: {
+      },
+      pie: {
          borderWidth: 0
-     }
+      }
    },
    legend: {
       itemStyle: {
