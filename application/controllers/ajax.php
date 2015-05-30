@@ -72,11 +72,14 @@ class Ajax extends CI_Controller {
         // Switch through the different types of AJAX calls, file_handler accepts
         switch($type){
             case 'browser_data':
-                $sql = 'SELECT browser, COUNT(*) AS count, SUM(count) AS count_sum FROM og_user_agents GROUP BY browser ';
+                $sql = 'SELECT browser, COUNT(*) AS count FROM og_user_agents GROUP BY browser ';
                 $query = $this->db->query($sql);
                 if($query->num_rows() > 0){
+                    $this->db->select('id');
+                    $number = $this->db->get('user_agents');
+
                     $results = $query->result_array();
-                    $this->_exit(200, null, array('data' => $results, 'total' => $query->num_rows()));
+                    $this->_exit(200, null, array('data' => $results, 'total' => $number->num_rows()));
                 }
                 break;
         }
