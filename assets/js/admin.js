@@ -5,9 +5,6 @@ Ooge.admin = {
         $.ajax({
 			url: Ooge.base_url('ajax/stats/browser_data'),
 			type: 'POST',
-            contentType: false,
-            cache: false,
-            processData: false,
 			success: function(data) {
 				if(data.success){
                     $('#browser_chart').text(data.results);
