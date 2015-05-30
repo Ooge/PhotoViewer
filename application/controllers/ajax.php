@@ -58,6 +58,30 @@ class Ajax extends CI_Controller {
         }
     }
 
+    public function stats($type) {
+        // If a type is not set, exit with an error.
+        if(!$type){
+            $this->_exit(400, 'Action not specified');
+        }
+
+        // Only users who are logged in can view stats. Also get the user
+        if (!($user = $this->m_session->get_current_user())) {
+            $this->_exit(401, 'You are not authorized to access this resource');
+        }
+
+        // Switch through the different types of AJAX calls, file_handler accepts
+        switch($type){
+            case 'browser_data':
+                $sql = 'SELECT browser, COUNT(*) FROM og_user_agents GROUP BY browser';
+                $query = $this->db->query($sql);
+                if($query->num_rows() > 0){
+                    $results = $query->result_array();
+                    $this->_exit(200, null, $results);
+                }
+                break;
+        }
+    }
+
 
     // Our custom exit() function
     function _exit($code, $reason = null, $add = array()) {
