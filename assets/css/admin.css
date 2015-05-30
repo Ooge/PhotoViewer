@@ -18,3 +18,6 @@
     color: #E0E0E3;
     text-align:center;
 }
+ul {
+    list-style: none;
+}
