@@ -175,10 +175,10 @@ Highcharts.theme = {
 
    navigator: {
       handles: {
-         backgroundColor: '#666',
-         borderColor: '#AAA'
+         backgroundColor: '#1a1a1a',
+         borderColor: '#151515'
       },
-      outlineColor: '#CCC',
+      outlineColor: '#151515',
       maskFill: 'rgba(255,255,255,0.1)',
       series: {
          color: '#7798BF',
