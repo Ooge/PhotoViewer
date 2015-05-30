@@ -13,7 +13,7 @@ ob_start();
 stats
 </div>
 <div class="admin-section" id="ip_addresses">
-    <h3>Latest IP addresses</h3>
+    <span class='section-header'>Latest IP addresses</span>
     <ul class="iplist">
     <?php
     foreach($last_ips as $ip) {

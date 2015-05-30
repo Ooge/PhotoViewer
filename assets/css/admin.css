@@ -12,3 +12,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+.section-header {
+    text-transform: uppercase;
+    font-size: 25pt;
+}
