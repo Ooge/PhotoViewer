@@ -39,9 +39,9 @@ Highcharts.theme = {
             color: '#E0E0E3'
          }
       },
-      lineColor: '#1a1a1a',
+      lineColor: '#707073',
       minorGridLineColor: '#505053',
-      tickColor: '#1a1a1a',
+      tickColor: '#707073',
       title: {
          style: {
             color: '#A0A0A3'
@@ -56,9 +56,9 @@ Highcharts.theme = {
             color: '#E0E0E3'
          }
       },
-      lineColor: '#1a1a1a',
+      lineColor: '#707073',
       minorGridLineColor: '#505053',
-      tickColor: '#1a1a1a',
+      tickColor: '#707073',
       tickWidth: 1,
       title: {
          style: {
@@ -85,7 +85,7 @@ Highcharts.theme = {
          fillColor: '#505053'
       },
       candlestick: {
-         lineColor: 'white'
+         lineColor: '#1a1a1a'
       },
       errorbar: {
          color: 'white'
