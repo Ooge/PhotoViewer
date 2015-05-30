@@ -1,6 +1,6 @@
 /**
  * Dark theme for Highcharts JS
- * @author Torstein Honsi
+ * @author Torstein Honsi (Colors modified by Ryan Thorn)
  */
 
 // Load the fonts
@@ -202,7 +202,7 @@ Highcharts.theme = {
 
    // special colors for some of the
    legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
-   background2: '#505053',
+   background2: '#1a1a1a',
    dataLabelsColor: '#B0B0B3',
    textColor: '#C0C0C0',
    contrastTextColor: '#F0F0F3',
