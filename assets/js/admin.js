@@ -3,7 +3,7 @@ Ooge.admin = {
     init: function() {
         $.ajaxSetup({xhrFields: {withCredentials: true}, data:{ 'ry_csrf_token': $.cookie('ry_csrf_cookie') }});
         $.ajax({
-			url: Ooge.base_url('ajax/stats/browser_data'),
+			url: Ooge.base_url('ajax/stats/browasdser_data'),
 			type: 'POST',
 			success: function(data) {
 				if(data.success){
@@ -41,7 +41,7 @@ Ooge.admin = {
 				}
 			},
 			error: function() {
-
+                $('#browser_chart').html('<b style="text-align:center;">Unable to load data at this time. Try again later!</b>')
 			}
 		});
     }
