@@ -8,8 +8,7 @@ $CI =& get_instance();
 $user = $CI->m_session->get_current_user();
 ob_start();
 ?>
-<h1>Admin Panel</h1>
-<h3>Hi <?php echo $user->username; ?>.</h3>
+<h1>Hi <?php echo $user->username; ?> - Welcome to the Admin Panel</h1>
 <div class="admin-section">
 stats
 </div>
