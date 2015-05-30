@@ -17,6 +17,9 @@
     color: #E0E0E3;
     text-align:center;
 }
+.iplist {
+    margin-top: 10px;
+}
 ul {
     margin: 0;
     padding: 0;
