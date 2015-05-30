@@ -35,7 +35,6 @@ Ooge.admin = {
                             type: 'pie',
                             name: 'Browser Used',
                             data: data.results
-                            ]
                         }]
                     });
 				}
