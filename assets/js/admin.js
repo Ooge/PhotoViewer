@@ -21,17 +21,13 @@ Ooge.admin = {
                     allowPointSelect: true,
                     cursor: 'pointer',
                     dataLabels: {
-                        enabled: true,
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                        style: {
-                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                        }
+                        enabled: false,
                     }
                 }
             },
             series: [{
                 type: 'pie',
-                name: 'Common Browsers',
+                name: 'Browser Used',
                 data: [
                     ['Firefox',   45.0],
                     ['IE',       26.8],
