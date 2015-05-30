@@ -1,6 +1,7 @@
 Ooge.admin = {
     handlers: {},
     init: function() {
+        $.ajaxSetup({xhrFields: {withCredentials: true}, data:{ 'ry_csrf_token': $.cookie('ry_csrf_cookie') }});
         $.ajax({
 			url: Ooge.base_url('ajax/stats/browser_data'),
 			type: 'POST',
