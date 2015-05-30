@@ -6,6 +6,9 @@ Ooge.admin = {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: null,
+                credits: {
+                    enabled: false
+                }
             },
             title: {
                 text: 'Common Browser Types'
