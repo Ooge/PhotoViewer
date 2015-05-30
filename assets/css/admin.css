@@ -6,3 +6,7 @@
     background-color:#1a1a1a;
     vertical-align:top;
 }
+#ip_addresses {
+    box-sizing: border-box;
+    padding: 10px;
+}

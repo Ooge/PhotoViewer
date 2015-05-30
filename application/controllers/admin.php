@@ -5,11 +5,14 @@ class Admin extends CI_Controller {
         if((!$user = $this->m_session->get_current_user())){
             show_404();
         }
-        $data = array(
-            'main_content' => 'admin'
-        );
+        if($user->get_rank() == 'admin'){
+            $data = array(
+                'main_content' => 'admin'
+            );
 
-        $this->load->view('template', $data);
-
+            $this->load->view('template', $data);
+        } else {
+            show_404();
+        }
     }
 }

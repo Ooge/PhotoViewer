@@ -12,8 +12,8 @@ ob_start();
 <div class="admin-section" id="browser_chart">
 stats
 </div>
-<div class="admin-section">
-morestats
+<div class="admin-section" id="ip_addresses">
+    <h3>Latest IP addresses</h3>
 </div>
 <?php
 $content = ob_get_contents();
