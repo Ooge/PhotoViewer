@@ -6,7 +6,8 @@ Ooge.admin = {
 			type: 'POST',
 			success: function(data) {
 				if(data.success){
-                    $('#browser_chart').highcharts({
+                    $('#browser_chart').text(data.results);
+                    /*$('#browser_chart').highcharts({
                         credits: {
                             enabled: false
                         },
@@ -36,7 +37,7 @@ Ooge.admin = {
                             name: 'Browser Used',
                             data: data.results
                         }]
-                    });
+                    });*/
 				}
 			},
 			error: function() {
