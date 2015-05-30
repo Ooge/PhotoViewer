@@ -108,6 +108,7 @@
         </div>
 
         <script src="<?php echo base_url('assets/js/vendor/jquery.js'); ?>" type="text/javascript"></script>
+        <script src="<?php echo base_url('assets/js/vendor/jquery.cookie.js'); ?>" type="text/javascript"></script>
         <script src="<?php echo base_url('assets/js/global.js'); ?>" type="text/javascript"></script>
         <?php echo $page->scripts(); ?>
         <script>
