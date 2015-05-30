@@ -76,7 +76,7 @@ class Ajax extends CI_Controller {
                 $query = $this->db->query($sql);
                 if($query->num_rows() > 0){
                     $results = $query->result_array();
-                    $this->_exit(200, null, array('data' => $results));
+                    $this->_exit(200, null, array('data' => $results, 'total' => $query->num_rows()));
                 }
                 break;
         }
