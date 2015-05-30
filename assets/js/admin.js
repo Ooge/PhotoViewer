@@ -2,13 +2,13 @@ Ooge.admin = {
     handlers: {},
     init: function() {
         $('#browser_chart').highcharts({
+            credits: {
+                enabled: false
+            },
             chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: null,
-                credits: {
-                    enabled: false
-                }
             },
             title: {
                 text: 'Common Browser Types'
