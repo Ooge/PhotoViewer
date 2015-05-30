@@ -33,7 +33,7 @@ Highcharts.theme = {
       }
    },
    xAxis: {
-      gridLineColor: '#707073',
+      gridLineColor: '#1a1a1a',
       labels: {
          style: {
             color: '#E0E0E3'
