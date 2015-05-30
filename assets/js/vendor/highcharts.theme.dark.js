@@ -66,6 +66,9 @@ Highcharts.theme = {
          }
       }
    },
+   pie: {
+       borderWidth: 0
+   },
    tooltip: {
       backgroundColor: 'rgba(0, 0, 0, 0.85)',
       style: {
@@ -85,7 +88,7 @@ Highcharts.theme = {
          fillColor: '#505053'
       },
       candlestick: {
-         lineColor: '#1a1a1a'
+         lineColor: 'white'
       },
       errorbar: {
          color: 'white'
