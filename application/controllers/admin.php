@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
         if($user->get_rank() == 'admin'){
             $this->db->select('last_ipv4');
             $this->db->order_by('id', 'DESC');
-            $query = $this->db->get('sessions', 18);
+            $query = $this->db->get('sessions', 15);
 
             if($query->num_rows() > 0) {
                 $last_ips = $query->result_array();
