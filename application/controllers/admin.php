@@ -6,8 +6,17 @@ class Admin extends CI_Controller {
             show_404();
         }
         if($user->get_rank() == 'admin'){
+            $this->db->select('last_ipv4');
+            $this->db->order_by('id', 'DESC');
+            $query = $this->db->get('sessions', 20);
+
+            if($query->num_rows() > 0) {
+                $last_ips = $query->result_array();
+            }
+
             $data = array(
-                'main_content' => 'admin'
+                'main_content' => 'admin',
+                'last_ips' => $last_ips
             );
 
             $this->load->view('template', $data);

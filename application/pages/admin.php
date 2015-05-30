@@ -14,6 +14,15 @@ stats
 </div>
 <div class="admin-section" id="ip_addresses">
     <h3>Latest IP addresses</h3>
+    <ul class="iplist">
+    <?php
+    foreach($last_ips as $ip) {
+        ?>
+        <li><?php echo $ip['last_ipv4']; ?></li>
+        <?php
+    }
+    ?>
+    </ul>
 </div>
 <?php
 $content = ob_get_contents();
