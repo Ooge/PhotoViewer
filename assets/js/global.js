@@ -55,24 +55,6 @@ Ooge.global = {
 				}
 			});
 		});
-		//Ooge.global.loadImages();
-	},
-	loadImages: function() {
-		$.ajax({
-			url: Ooge.base_url('ajax/file_handler.php'),
-			type: 'POST',
-			data: { action: "load" },
-			success: function(data) {
-				if(data.success){
-					for(var i = 0; i < data.files.length; i++) {
-						$('#images-container').append('<div class="image"><a href="' + data.files[i] + '"><img src="' + data.files[i] + '" alt="image" ></a></div>');
-					}
-				}
-			},
-			error: function() {
-
-			}
-		});
 	}
 }
 Ooge.global.init();

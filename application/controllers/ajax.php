@@ -79,7 +79,12 @@ class Ajax extends CI_Controller {
                     $number = $this->db->get('user_agents');
 
                     $results = $query->result_array();
-                    $this->_exit(200, null, array('data' => $results, 'total' => $number->num_rows()));
+
+                    $data = array();
+                    foreach($results as $res) {
+                        $data[] = array($res['browser'], ($res['count'] / $number->num_rows()));
+                    }
+                    $this->_exit(200, null, array('results' => $data, 'total' => $number->num_rows()));
                 }
                 break;
         }
