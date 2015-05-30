@@ -102,6 +102,8 @@ class M_Session extends CI_Model {
         $this->db->insert('user_agents', $agentData);
 
         $this->user = new User($id);
+
+        $this->user->last_ipv4 = $last_ipv4;
     }
 
     public function logout() {
