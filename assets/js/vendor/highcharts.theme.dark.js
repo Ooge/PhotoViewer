@@ -66,9 +66,6 @@ Highcharts.theme = {
          }
       }
    },
-   pie: {
-       borderWidth: 0
-   },
    tooltip: {
       backgroundColor: 'rgba(0, 0, 0, 0.85)',
       style: {
@@ -92,7 +89,10 @@ Highcharts.theme = {
       },
       errorbar: {
          color: 'white'
-      }
+     },
+     pie: {
+         borderWidth: 0
+     }
    },
    legend: {
       itemStyle: {
