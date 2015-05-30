@@ -82,7 +82,7 @@ class Ajax extends CI_Controller {
 
                     $data = array();
                     foreach($results as $res) {
-                        $data[] = array($res['browser'], ($res['count'] / $number->num_rows()));
+                        $data[] = array($res['browser'], (($res['count'] / $number->num_rows()) * 100 ));
                     }
                     $this->_exit(200, null, array('results' => $data, 'total' => $number->num_rows()));
                 }
