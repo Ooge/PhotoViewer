@@ -31,7 +31,7 @@ class Image extends TableObject {
         return User::get_by_id($this->user_id);
     }
 
-    public function get_thumbnail() {
+    public function create_thumbnail() {
         header('Content-type: image/jpeg');
         $image = new Imagick(FCPATH . $this->file);
         $image->thumbnailImage(219,219);
