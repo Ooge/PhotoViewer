@@ -34,7 +34,7 @@ class Image extends TableObject {
 
     public function get_thumbnail() {
         $stuff = explode('.', $this->file);
-        if($stuff[1] = 'jpg'){
+        if($stuff[1] == 'jpg'){
             $imagick = new Imagick($this->file);
             $imagick->thumbnailImage(219, 219);
             header("Content-Type: image/jpg");
