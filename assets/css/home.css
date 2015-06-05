@@ -17,7 +17,7 @@
 
 .gallery .gallery-item img {
 	position: absolute;
-	clip: rect(0px,219px,219px,0px);
+	/*clip: rect(0px,219px,219px,0px);*/
 	width:219px;
-    height: auto;
+    height: 219px;
 }
