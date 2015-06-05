@@ -11,7 +11,7 @@ ob_start();
 <h1>Gallery</h1>
 <div class="gallery">
 	<?php
-	var_dump(BASEPATH);
+	var_dump(FCPATH);
 		/*if($latestImages != 0){
 			foreach($latestImages as $image){
 				echo '<a href="'.base_url($image->gid).'"><div class="gallery-item"><img src="'.$image->get_thumbnail().'" alt="'.$image->title.'" title="'.$image->title.'" /></div></a>';
