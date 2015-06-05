@@ -33,7 +33,7 @@ class Image extends TableObject {
 
 
     public function get_thumbnail() {
-        $imagick = new \Imagick(realpath($this->file));
+        $imagick = new \Imagick($this->file);
         $imagick->thumbnailImage(219, 219, true);
         header("Content-Type: image/jpg");
         return $imagick->getImageBlob();
