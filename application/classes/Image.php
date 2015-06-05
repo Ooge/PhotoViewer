@@ -33,8 +33,8 @@ class Image extends TableObject {
 
 
     public function get_thumbnail() {
-        //$imagick = new Imagick($this->file);
-        //$imagick->thumbnailImage(219, 219);
+        $imagick = new Imagick($this->file);
+        $imagick->thumbnailImage(219, 219);
 
         $ext = explode('.', $this->file);
         switch($ext[1]){
@@ -49,8 +49,7 @@ class Image extends TableObject {
                 break;
         }
 
-        //return $imagick->getImageBlob();
-        return realpath(BASEPATH);
+        return $imagick->getImageBlob();
     }
 
     /* */ /* */ /* */ /* */ /* */

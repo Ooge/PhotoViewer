@@ -11,13 +11,13 @@ ob_start();
 <h1>Gallery</h1>
 <div class="gallery">
 	<?php
-		if($latestImages != 0){
+		/*if($latestImages != 0){
 			foreach($latestImages as $image){
 				echo '<a href="'.base_url($image->gid).'"><div class="gallery-item"><img src="'.$image->get_thumbnail().'" alt="'.$image->title.'" title="'.$image->title.'" /></div></a>';
 			}
 		} else {
 			echo 'No images posted. <a class="upload_toggle" href="javascript:void(0);">Be the first</a>';
-		}
+		}*/
 	?>
 </div>
 <?php
