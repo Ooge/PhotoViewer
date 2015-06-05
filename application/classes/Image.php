@@ -35,7 +35,7 @@ class Image extends TableObject {
         header('Content-type: image/jpeg');
         $image = new Imagick(FCPATH . $this->file);
         $image->thumbnailImage(219,219);
-        echo $image;
+        return $image;
     }
 
     /* */ /* */ /* */ /* */ /* */
