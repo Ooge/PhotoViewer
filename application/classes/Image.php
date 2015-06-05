@@ -33,23 +33,10 @@ class Image extends TableObject {
 
 
     public function get_thumbnail() {
-        $imagick = new Imagick(realpath(FCPATH . $this->file));
-        $imagick->thumbnailImage(219, 219);
-
-        $ext = explode('.', $this->file);
-        switch($ext[1]){
-            case 'jpg':
-                header("Content-Type: image/jpg");
-                break;
-            case 'png':
-                header("Content-Type: image/png");
-                break;
-            case 'gif':
-                header("Content-Type: image/gif");
-                break;
-        }
-
-        return $imagick->getImageBlob();
+        header('Content-type: image/jpeg');
+        $image = new Imagick(FCPATH . $this->file);
+        $image->thumbnailImage(219,219);
+        return $image;
     }
 
     /* */ /* */ /* */ /* */ /* */
