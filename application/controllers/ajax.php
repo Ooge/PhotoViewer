@@ -39,6 +39,11 @@ class Ajax extends CI_Controller {
                     $this->_exit(400,'Error uploading File', array('error' => $this->upload->display_errors()));
                 } else {
                     // Was successful. Add upload to MySQL table and exit the user, parsing image info.
+                    // We are also going to use the Imagick API to create a smaller, square thumbnail of the image
+                    $imagick = new Imagick(realpath(FCPATH . 'uploads/' . $newFileName));
+                    $imagick->thumbnailImage(219, 219, true);
+                    $imagick->writeImage(FCPATH . 'thumbs/' . $newFileName);
+
                     $imgInfo = $this->upload->data();  // Get image data
                     // Create an array of data to be inserted into the MySQL table.
                     $insertData = array(
@@ -46,7 +51,8 @@ class Ajax extends CI_Controller {
                         'gid' => $imageGID,
                         'title' => $_POST['image-title'],
                         'description' => $_POST['image-desc'],
-                        'file' => '/uploads/' . $newFileName,
+                        'file_location' => '/uploads/' . $newFileName,
+                        'thumb_location' => '/thumbs/' . $newFileName,
                         'time' => time()
                     );
                     // Insert the array into the uploads MySQL table.
