@@ -21,7 +21,7 @@
         <div class="topbar">
             <div class="c1024" id="nav-wrap">
                 <div class="nav-logo">
-                    <img src="<?php echo base_url('assets/img/ooge-logo.png'); ?>" alt="Ooge-Logo" />
+                    <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url('assets/img/ooge-logo.png'); ?>" alt="Ooge-Logo" /></a>
                 </div>
                 <div class="nav-left">
                     <ul>
