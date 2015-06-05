@@ -7,7 +7,7 @@ class Site extends CI_Controller {
 		$this->load->model('m_image');
 
         $data['main_content'] = 'home';
-		$data['latestImages'] = $this->m_image->get_latest_images(10);
+		$data['latestImages'] = $this->m_image->get_latest_images(20);
         $this->load->view('template', $data);
 	}
 
