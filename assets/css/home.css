@@ -19,5 +19,5 @@
 	position: absolute;
 	/*clip: rect(0px,219px,219px,0px);*/
 	width:219px;
-    height: 219px;
+    height: auto;
 }

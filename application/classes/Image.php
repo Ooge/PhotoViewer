@@ -31,6 +31,10 @@ class Image extends TableObject {
         return User::get_by_id($this->user_id);
     }
 
+    public function force_new_thumb() {
+        
+    }
+
     /* */ /* */ /* */ /* */ /* */
     /*   Static method start   */
     /* */ /* */ /* */ /* */ /* */
