@@ -6,6 +6,9 @@ $title = 'Home';
 $CI =& get_instance();
 
 $user = $CI->m_session->get_current_user();
+
+$CI->load->model('m_image');
+$CI->m_image->thumbnailise();
 ob_start();
 ?>
 <h1>Gallery</h1>

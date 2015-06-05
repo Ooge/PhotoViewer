@@ -17,4 +17,14 @@ class M_image extends CI_Model {
         }
         return 0;
     }
+
+    public function thumbnailise() {
+        $images = new Imagick(glob(FCPATH . 'uploads/*'));
+
+        foreach($images as $image) {
+            $image->thumbnailImage(219,219);
+        }
+
+        $images->writeImages();
+    }
 }
