@@ -41,7 +41,7 @@ class Ajax extends CI_Controller {
                     // Was successful. Add upload to MySQL table and exit the user, parsing image info.
                     // We are also going to use the Imagick API to create a smaller, square thumbnail of the image
                     $imagick = new Imagick(realpath(FCPATH . 'uploads/' . $newFileName));
-                    $imagick->thumbnailImage(219, 219, true);
+                    $imagick->cropImage(219, 219, 0, 0);
                     $imagick->writeImage(FCPATH . 'thumbs/' . $newFileName);
 
                     $imgInfo = $this->upload->data();  // Get image data
