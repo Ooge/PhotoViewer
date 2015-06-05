@@ -14,7 +14,7 @@ ob_start();
 	<span class="muted">By <a href="<?php echo base_url('/user/'.$author->username); ?>"><?php echo $author->username; ?></a> - <?php echo time_ago($image_data->time); ?></span>
 </div>
 <div class="image-container">
-	<img class="image-main" src="<?php echo base_url($image_data->file); ?>" />
+	<img class="image-main" src="<?php echo base_url($image_data->file_location); ?>" />
 </div>
 <div class="sidebar-container">
 	<button class="btn prev"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Prev</button>

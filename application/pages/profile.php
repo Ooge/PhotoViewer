@@ -17,7 +17,7 @@ ob_start();
 	<?php
 		if($profileImages != 0){
 			foreach($profileImages as $image){
-				echo '<a href="'.base_url($image->gid).'"><div class="gallery-item"><img src="'.$image->file.'" alt="'.$image->title.'" title="'.$image->title.'" /></div></a>';
+				echo '<a href="'.base_url($image->gid).'"><div class="gallery-item"><img src="'.$image->file_location.'" alt="'.$image->title.'" title="'.$image->title.'" /></div></a>';
 			}
 		} else {
 			echo 'This user has not posted any images.';
