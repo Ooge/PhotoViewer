@@ -31,6 +31,15 @@ class Image extends TableObject {
         return User::get_by_id($this->user_id);
     }
 
+
+    public function get_thumbnail() {
+        header('Content-type: image/jpeg');
+        $image = new Imagick($this->file);
+
+        $image->thumbnailImage(219,219);
+        return $image;
+    }
+
     /* */ /* */ /* */ /* */ /* */
     /* Static method start     */
     /* */ /* */ /* */ /* */ /* */
