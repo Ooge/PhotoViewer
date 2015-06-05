@@ -39,7 +39,7 @@ class Image extends TableObject {
     }
 
     /* */ /* */ /* */ /* */ /* */
-    /* Static method start     */
+    /*   Static method start   */
     /* */ /* */ /* */ /* */ /* */
     public static $_imageCache = array();
 
