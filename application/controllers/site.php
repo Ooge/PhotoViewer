@@ -27,6 +27,8 @@ class Site extends CI_Controller {
 	}
 	// The login function that is ran when the login form is submitted
 	public function login_user() {
+		// Load our logging model
+		$this->load->model('m_logging');
 		// Check they are not already logged in
 		if(($user = $this->m_session->get_current_user())) {
             // TODO: Again redirect rather than error out.
@@ -38,7 +40,6 @@ class Site extends CI_Controller {
 		// This should never run because of the form_validation we are doing below here
 		if(!$this->input->post('username') || !$this->input->post('password')) {
             // TODO: Use actual validation rather than showing an error.
-
 			show_error('Error: Username or Password not entered!');
 			return;
 		}
@@ -65,6 +66,9 @@ class Site extends CI_Controller {
 
 			// If we found no users, redirect to the login page with an error
 	    	if($query->num_rows() == 0){
+				// Send the log message of failed login to the DB
+				$this->m_logging->add_log('LOGINERR', 'Failed Login: Unknown User Request (Brute Force?)', 'No Data', 'No Data');
+				// Redirect
 	    		redirect(base_url('login?code=1'));
 	            return;
 	    	}
@@ -80,8 +84,12 @@ class Site extends CI_Controller {
 	    		$this->m_session->login($id, $remember_me); // Begin a new session using our m_session model
 	    		redirect(base_url('/')); // Redirect to home.
 	    	} else {
-		    	redirect(base_url('login?code=1')); // The passwords did not match
-				// Redirect and return
+				// The passwords did not match
+				// Send the log message of failed login to the DB
+				$this->m_logging->add_log('LOGINERR', 'Failed Login: Password Mismatch', $row['id'], 'No Data');
+				// Redirect
+		    	redirect(base_url('login?code=1'));
+				// and return
 		    	return;
 	    	}
     	}

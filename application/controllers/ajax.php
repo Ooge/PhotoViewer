@@ -36,7 +36,12 @@ class Ajax extends CI_Controller {
                 // Do our upload, encapsulate it in an if statement to see if it
                 // was successful or not.
                 if(!$this->upload->do_upload('userfile')) {
-                    // Error occurred while uploading
+                    // Error occurred while uploading sent error to log database and exit with error
+                    // Load our logging model
+                    $this->load->model('m_logging');
+                    // Send the log message to the DB
+                    $this->m_logging->add_log('UPLOADERR', $this->upload->display_errors(), $user->id, $newFileName);
+                    // Exit
                     $this->_exit(400,'Error uploading File', array('error' => $this->upload->display_errors()));
                 } else {
                     // Was successful. Add upload to MySQL table and exit the user, parsing image info.
