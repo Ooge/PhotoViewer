@@ -1,12 +1,18 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/*
+    Our Register page
+    Works exactly like the login page with the Page class
+*/
+// Our stylesheets
 $stylesheets = array(base_url('assets/css/login.css'));
+// No scripts
 $scripts = array();
+// Title of the page
 $title = 'Register';
+// Get the content into an output buffer
 ob_start();
 ?>
 <div class="login_container">
-
     <span style="color:red; font-weight:bold;"><?php echo validation_errors(); ?></span>
     <?php echo form_open('register_user', array('data-abide' => 1)); ?>
     <div class="input-group">
@@ -43,6 +49,8 @@ ob_start();
 </div>
 
 <?php
+// Get the contents of the output bugger
 $content = ob_get_contents();
 ob_end_clean();
+// Return the constructed page object
 return new Page($stylesheets, $scripts, $title, $content, false);

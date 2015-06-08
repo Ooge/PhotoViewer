@@ -20,6 +20,7 @@ class Ajax extends CI_Controller {
                 // Get the file extension through exploding the file name by . and
                 // getting the last element.
                 $fileExtension = end(explode('.',$_FILES['userfile']['name']));
+                // Using a helper function, generate a random name for the file
                 $imageGID = generate_random(7);
                 $newFileName = $imageGID . '.' .  strtolower($fileExtension);
 
@@ -27,7 +28,7 @@ class Ajax extends CI_Controller {
                 $config['upload_path'] = FCPATH . 'uploads';    // Where we want to upload
                 $config['allowed_types'] = 'gif|jpg|png';       // Filetypes we allow
                 $config['max_size'] = 10000;                    // Allow up to 10MB files
-                // Using a helper function, generate a random name for the file
+                // Setting the filename to the generated file name
                 $config['file_name'] =  $newFileName;
 
                 // Load the upload class, parsing in the config values set above.
@@ -41,8 +42,11 @@ class Ajax extends CI_Controller {
                     // Was successful. Add upload to MySQL table and exit the user, parsing image info.
                     // We are also going to use the Imagick API to create a smaller, square thumbnail of the image
                     $imagick = new Imagick(realpath(FCPATH . 'uploads/' . $newFileName));
+                    // Resize the image so bigger images are cropped correctly
                     $imagick->resizeImage(300, 0, imagick::FILTER_CATROM, 0.6, false);
+                    // Crop the image so that it is 219x219px
                     $imagick->cropImage(219, 219, 0, 0);
+                    // Write the newly cropped image to the thumbs directory
                     $imagick->writeImage(FCPATH . 'thumbs/' . $newFileName);
 
                     $imgInfo = $this->upload->data();  // Get image data
@@ -78,19 +82,26 @@ class Ajax extends CI_Controller {
 
         // Switch through the different types of AJAX calls, file_handler accepts
         switch($type){
+            // Our case to get browser data
             case 'browser_data':
+                // Our SQL query to get the count of all browsers used to log into the website
                 $sql = 'SELECT browser, COUNT(*) AS count FROM og_user_agents GROUP BY browser';
+                // Run the query
                 $query = $this->db->query($sql);
+                // If we have a row found
                 if($query->num_rows() > 0){
+                    // Select the ID from user agents
                     $this->db->select('id');
                     $number = $this->db->get('user_agents');
-
+                    // Get the results
                     $results = $query->result_array();
-
+                    // Create a data array to hold our results
                     $data = array();
                     foreach($results as $res) {
+                        // Looping through the results and working out the percentage
                         $data[] = array($res['browser'], round((($res['count'] / $number->num_rows()) * 100 ), 2));
                     }
+                    // Exiting with the percentage data.
                     $this->_exit(200, null, array('results' => $data, 'total' => $number->num_rows()));
                 }
                 break;

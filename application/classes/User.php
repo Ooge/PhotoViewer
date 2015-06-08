@@ -1,12 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+// Our user class that extends the TableObject
 class User extends TableObject {
+    // The ID of the user
     public $id;
 
+    // Our DB variable, user profile cache and rank cache.
     private $db;
     private $_profile_cache;
     private $_rank_cache;
 
+    // A constructor that sets up the TableObject variables.
     public function __construct($id, $construct = true) {
         parent::__construct();
 
@@ -22,125 +26,70 @@ class User extends TableObject {
         }
     }
 
+    // A function to return the users profile object.
     public function get_profile() {
         if (!$this->_profile_cache) {
+            // If their profile is not in the cache, create a new UserProfile
             $this->_profile_cache = new UserProfile($this);
         }
+        // Return it.
         return $this->_profile_cache;
     }
-
+    // A function that returns the users rank. (What we use to see if a user is an admin.)
     public function get_rank() {
         if(!$this->_rank_cache) {
+            // If we dont have their rank stored in our cache, search for it in the DB
             $this->db->where('user_id', $this->id);
+            // Get their rank from the user_ranks table.
             $query = $this->db->get('user_ranks', 1);
-
+            // If there is no result, return them as a user.
             if($query->num_rows() == 0){
                 return 'user';
             }
-
+            // Get the result and then add it to the rank cache
             $result = $query->result_array();
             $row = $result[0];
             $this->_rank_cache = $row['rank'];
         }
-
+        // return the rank cache.
         return $this->_rank_cache;
     }
-
+    // Set a users rank
     public function set_rank($rank) {
+        // Get the current rank
         $this->db->where('user_id', $this->id);
         $query = $this->db->get('user_ranks');
-
+        // If we get a result
         if($query->num_rows() > 0) {
+            // get the result array
             $result = $query->result_array();
             $row = $result[0];
             $cur_rank = $row['rank'];
-
+            // If cur rank == rank we are setting
             if($cur_rank == $rank) {
                 return $this->_rank_cache;
             } else {
+                // Update rank if difference is occuring
                 $this->db->where('user_id', $this->id);
                 $query = $this->db->update('user_ranks', array('rank' => $rank));
                 $this->_rank_cache = $rank;
                 return $this->_rank_cache;
             }
         } else {
+            // If there is no rank set for the user - at all - insert a new one for them.
             $this->db->insert('user_ranks', array('user_id' => $this->id, 'rank' => $rank));
             $this->_rank_cache = $rank;
             return $this->_rank_cache;
         }
     }
 
-    public function toggle_follow($following) {
-        if(is_object($following)) {
-            $following = $following->id;
-        } else if(!is_numeric($following)) {
-            return false;
-        }
-
-        $this->db->where('user_id', $this->id);
-        $this->db->where('following_id', $following);
-        $query = $this->db->get('user_followers');
-
-        if($query->num_rows() > 0) {
-            $this->db->where('user_id', $this->id);
-            $this->db->where('following_id', $following);
-            $this->db->delete('user_followers');
-            return true;
-        } else {
-
-            $data = array(
-                'user_id' => $this->id,
-                'following_id' => $following,
-                'timestamp' => time()
-                );
-
-            $query = $this->db->insert('user_followers', $data);
-            return true;
-        }
-    }
-
-    public function is_following($following) {
-        if(!$following) {
-            return false;
-        }
-
-        $this->db->where('user_id', $this->id);
-        $this->db->where('following_id', $following);
-        $query = $this->db->get('user_followers');
-
-        if($query->num_rows() == 0) {
-            return false;
-        } else {
-            return true;
-        }
-        return false;
-    }
-
-    public function follower_count() {
-        $this->db->where('following_id', $this->id);
-        $query = $this->db->get('user_followers');
-
-        return $query->num_rows();
-    }
-
-    public function following_count() {
-        $this->db->where('user_id', $this->id);
-        $query = $this->db->get('user_followers');
-
-        return $query->num_rows();
-    }
-
-    public function post_count() {
-        $this->db->where('user_id', $this->id);
-        $query = $this->db->get('user_posts');
-
-        return $query->num_rows();
-    }
     /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */
     /* Static method start                                               */
     /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */ /* */
 
-
+    // Here are our static functions to get the user object through mutliple methods
+    // This works similar to how the Image class works, however we can also get users
+    // via usernames
     public static $_userCache = array();
 
     public static function from_row_array($array) {

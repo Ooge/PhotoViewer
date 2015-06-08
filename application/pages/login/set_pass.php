@@ -1,15 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+// The forgot password set new password page
 $stylesheets = array(base_url('assets/css/login.css'));
 $scripts = array();
 $title = 'Forgot Password';
 ob_start();
 ?>
 <div id="mid">
-    <span id="logo">
-        <span id="logo-right">Ooge</span>
-        <span id="logo-uk">UK</span>
-    </span>
 
     <span style="color:red; font-weight:bold;">
         <?php

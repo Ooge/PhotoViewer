@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+// This helper file contains multiple large arrays of data used throughout the site
 function build_countries() {
+    // This is used for the country dropdown for selecting where you live in registration_date
+    // As of now we dont use this.
     $countries = array(
         'Afghanistan' => 'Afghanistan',
         'Albania' => 'Albania',
@@ -200,7 +202,7 @@ function build_countries() {
 
     return $countries;
 }
-
+// the months of the year, used in the DOB dropdown
 function build_months() {
     $months = array(
         'err' => 'Month',
@@ -220,7 +222,7 @@ function build_months() {
 
     return $months;
 }
-
+// Days in a month, used in the DOB dropdown
 function build_days() {
     $days = array(
         'err' => 'Day',
@@ -259,7 +261,7 @@ function build_days() {
 
     return $days;
 }
-
+// Years between 1900 and now, used for DOB dropdown
 function build_years() {
     $err_array = array('err' => 'Year');
     $years = array_combine(range(date("Y"), 1900), range(date("Y"), 1900));

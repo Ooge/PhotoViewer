@@ -1,8 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/*
+    Our Login page.
+    We make use of the Page class to display this page
+*/
+// The stlesheets loaded for this page
 $stylesheets = array(base_url('assets/css/login.css'));
+// No script for this page
 $scripts = array();
+// Title of the page
 $title = 'Login';
+// Output buffer to get the contents of the page and set it into a variable
 ob_start();
 ?>
 
@@ -10,6 +17,7 @@ ob_start();
     <h1 class="login-title">Login</h1>
     <span style="color:red; font-weight:bold;">
         <?php
+        // Form validation errors
         echo validation_errors();
         if(isset($_GET['code'])){
             switch($_GET['code']) {
@@ -46,6 +54,9 @@ ob_start();
 </div>
 
 <?php
+// We end the output butter and get the contents of the page
 $content = ob_get_contents();
+// Clean up the buffer for future use
 ob_end_clean();
+// Return the constructed Page object 
 return new Page($stylesheets, $scripts, $title, $content, false);

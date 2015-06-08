@@ -1,11 +1,15 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/*
+	This is the individual image view page, we have the image object from the controller
+*/
 $stylesheets = array(base_url('assets/css/view_image.css'));
 $scripts = array(base_url('assets/js/image_view.js'));
 $title = 'View Image';
 $CI =& get_instance();
 
+// get the current user
 $user = $CI->m_session->get_current_user();
+// get the author of the image from the image data passed in from the controller
 $author = $image_data->get_author();
 ob_start();
 ?>
@@ -103,4 +107,5 @@ ob_start();
 <?php
 $content = ob_get_contents();
 ob_end_clean();
+// Load the constructed page
 return new Page($stylesheets, $scripts, $title, $content);

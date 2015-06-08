@@ -1,7 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+// Our image model class
 class M_image extends CI_Model {
-
+    // Function to get the latest images that have been uploaded to the site
     public function get_latest_images($limit) {
         $this->db->where('deleted', 0);
         $this->db->order_by('time', 'DESC');

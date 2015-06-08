@@ -1,12 +1,13 @@
 Ooge.admin = {
     handlers: {},
     init: function() {
+        // Ajax for the data that gets browser information about users
         $.ajaxSetup({xhrFields: {withCredentials: true}, data:{ 'ry_csrf_token': $.cookie('ry_csrf_cookie') }});
         $.ajax({
 			url: Ooge.base_url('ajax/stats/browser_data'),
 			type: 'POST',
 			success: function(data) {
-				if(data.success){
+				if(data.success){ // Compile the found data into a pie chart
                     $('#browser_chart').highcharts({
                         credits: {
                             enabled: false
@@ -35,7 +36,7 @@ Ooge.admin = {
                         series: [{
                             type: 'pie',
                             name: 'Browser Used',
-                            data: data.results
+                            data: data.results // Data from the AJAX request
                         }]
                     });
 				}
